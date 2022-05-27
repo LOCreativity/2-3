@@ -4,37 +4,35 @@ public class number3 {
 	public static void main(String[] args) {
 		Scanner st = new Scanner(System.in);
 		
-		System.out.println("Áø¹ı°ú Áø¹ı¿¡ ÇØ´çµÇ´Â °ªÀ» ½ºÆäÀÌ½º¹Ù·Î ±¸ºĞÇÏ¿© ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ì§„ë²•ê³¼ ì§„ë²•ì— í•´ë‹¹ë˜ëŠ” ê°’ì„ ìŠ¤í˜ì´ìŠ¤ë°”ë¡œ êµ¬ë¶„í•˜ì—¬ ì…ë ¥í•˜ì„¸ìš”.");
 		String []NumArr = new String[2];
-		
 		for(int i = 0; i < 2; i++) {
 			NumArr[i] = st.next();
 		}
-	
-		//Conversion ob = new Conversion(n, Integer.toBinaryString(n), Integer.toHexString(n));
-		Conversion ob = new Conversion();
+		//ì„ì˜ì˜ ê°ì²´ ìƒì„±
+		Conversion ob = new Conversion(NumArr[1], NumArr[0]);
+		
+		//ì²˜ìŒ ì…ë ¥ëœ ë¬¸ìì—´ì— ë”°ë¼ ì§„ìˆ˜ ë³€í™˜ ë‹¬ë¼ì§
 		if(NumArr[0].equals("10")) {
-			
-			ob.setNum(Integer.parseInt(NumArr[1]));
+			ob = new Conversion(Integer.parseInt(NumArr[1]), 10);
 			ob.toBinary(Integer.parseInt(NumArr[1]));
 			ob.toHex(Integer.parseInt(NumArr[1]));
 		}
 		else if(NumArr[0].equals("2")) {
-
+			ob = new Conversion(NumArr[1], 2);
 			ob.binaryToNum(NumArr[1]);
-			ob.setBinary(NumArr[1]);
 			ob.binaryToHex(NumArr[1]);
 		}
 		else if(NumArr[0].equals("16")) {
-			
+			ob = new Conversion(NumArr[1], "16");
 			ob.hexToNum(NumArr[1]);
 			ob.hexToBinary(NumArr[1]);
-			ob.setHex(NumArr[1]);
 		}
-		System.out.println("10Áø¼ö : " + ob.printNum());
-		System.out.println("2Áø¼ö : " + ob.printBinary());
-		System.out.println("16Áø¼ö : " + ob.printHex());
 		
+		ob.printNum();
+		ob.printBinary();
+		ob.printHex();
 		st.close();
 	}
 }
+
