@@ -4,59 +4,51 @@ class Conversion {
 	private String bin;
 	private String hex;
 	
-	/*
-	public Conversion(int num) {
-		this.num = num;
+	public Conversion(int num, int k) {
+		this.num  = num;
 	}
-	public Conversion(int num, String bin, String hex) {
-		this.num = num;
-		this.bin = bin;
-		this.hex = hex;
-	}
-	*/
-	public void setNum(int num) {
-		this.num = num;
-	}
-	public void setBinary(String bin) {
+	public Conversion(String bin, int k) {
 		this.bin = bin;
 	}
-	public void setHex(String hex) {
+	public Conversion(String hex, String k) {
 		this.hex = hex;
 	}
+	
 	public void toBinary(int num) {
-		//10Áø¼ö 2Áø¹ı º¯È¯
-		bin = Integer.toBinaryString(num);
+		//10ì§„ìˆ˜ 2ì§„ë²• ë³€í™˜
+		this.bin = Integer.toBinaryString(num);
 	}
 	public void toHex(int num) {
-		//10Áø¼ö 16Áø¹ı º¯È¯
-		hex = Integer.toHexString(num);
+		//10ì§„ìˆ˜ 16ì§„ë²• ë³€í™˜
+		this.hex = Integer.toHexString(num);
 	}
 	public void binaryToHex(String bin) {
-		//2Áø¼ö 16Áø¼ö·Î º¯È¯
-		num = Integer.parseInt(bin, 2);
-		hex = Integer.toHexString(num);
+		//2ì§„ìˆ˜ 16ì§„ìˆ˜ë¡œ ë³€í™˜
+		this.num = Integer.parseInt(bin, 2);
+		this.hex = Integer.toHexString(this.num);
 	}
 	public void hexToBinary(String hex) {
-		//16Áø¼ö 2Áø¼ö·Î º¯È¯
-		num = Integer.parseInt(hex, 16);
-		bin = Integer.toBinaryString(num);
+		//16ì§„ìˆ˜ 2ì§„ìˆ˜ë¡œ ë³€í™˜
+		this.num = Integer.parseInt(hex, 16);
+		this.bin = Integer.toBinaryString(this.num);
 	}
 	public void binaryToNum(String bin) {
-		//2Áø¼ö 10Áø¼ö·Î º¯È¯
-		//Integer.parseInt(String s, int radix) => radixÁø¹ı s ¹®ÀÚ¿­À» 10Áø¼ö·Î ¹Ù²ãÁÜ   
-		num = Integer.parseInt(bin, 2);
+		//2ì§„ìˆ˜ 10ì§„ìˆ˜ë¡œ ë³€í™˜
+		//Integer.parseInt(String s, int radix) => radixì§„ë²• s ë¬¸ìì—´ì„ 10ì§„ìˆ˜ë¡œ ë°”ê¿”ì¤Œ   
+		this.num = Integer.parseInt(bin, 2);
 	}
 	public void hexToNum(String hex) {
-		//16Áø¼ö 10Áø¼ö·Î º¯È¯
-		num = Integer.parseInt(hex, 16);
+		//16ì§„ìˆ˜ 10ì§„ìˆ˜ë¡œ ë³€í™˜
+		this.num = Integer.parseInt(hex, 16);
 	}
-	public int printNum() {
-		return num;
+	public void printNum() {
+		System.out.println("10ì§„ìˆ˜ : " + this.num);
 	}
-	public String printBinary() {
-		return bin;
+	public void printBinary() {
+		System.out.println("2ì§„ìˆ˜ : " + this.bin);
 	}
-	public String printHex() {
-		return hex;
+	public void printHex() {
+		System.out.println("16ì§„ìˆ˜ : " + this.hex);
 	}
 }
+
