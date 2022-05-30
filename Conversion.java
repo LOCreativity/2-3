@@ -4,14 +4,16 @@ class Conversion {
 	private String bin;
 	private String hex;
 	
-	public Conversion(int num, int k) {
-		this.num  = num;
-	}
-	public Conversion(String bin, int k) {
-		this.bin = bin;
-	}
-	public Conversion(String hex, String k) {
-		this.hex = hex;
+	public Conversion(int num, String str){
+		if(num == 10) {
+			this.num = Integer.parseInt(str);
+		}
+		if(num == 2) {
+			this.bin = str;
+		}
+		if(num == 16) {
+			this.hex = str;
+		}
 	}
 	
 	public void toBinary(int num) {
