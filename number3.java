@@ -10,21 +10,18 @@ public class number3 {
 			NumArr[i] = st.next();
 		}
 		//임의의 객체 생성
-		Conversion ob = new Conversion(NumArr[1], NumArr[0]);
+		Conversion ob = new Conversion(Integer.parseInt(NumArr[0]), NumArr[1]);
 		
 		//처음 입력된 문자열에 따라 진수 변환 달라짐
 		if(NumArr[0].equals("10")) {
-			ob = new Conversion(Integer.parseInt(NumArr[1]), 10);
 			ob.toBinary(Integer.parseInt(NumArr[1]));
 			ob.toHex(Integer.parseInt(NumArr[1]));
 		}
 		else if(NumArr[0].equals("2")) {
-			ob = new Conversion(NumArr[1], 2);
 			ob.binaryToNum(NumArr[1]);
 			ob.binaryToHex(NumArr[1]);
 		}
 		else if(NumArr[0].equals("16")) {
-			ob = new Conversion(NumArr[1], "16");
 			ob.hexToNum(NumArr[1]);
 			ob.hexToBinary(NumArr[1]);
 		}
